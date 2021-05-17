@@ -20,6 +20,7 @@ public class Mastermind {
 			char ch = (char) (int) (Math.random() * 6 + 'a');
 			code = code + ch;
 		}
+		System.out.println("Delete after project complete\nGenerated code:  " + this.code);
 	}
 
 	// PUBLIC METHODS
@@ -27,8 +28,8 @@ public class Mastermind {
 	 * return the code
 	 */
 	public String getCode() {
-		String code = "fake";
-		return code;
+		System.out.println("code is:  " + this.code);
+		return this.code;
 	}
 
 	/**
