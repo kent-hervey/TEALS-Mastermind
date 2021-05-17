@@ -43,8 +43,7 @@ public class Mastermind {
 	 * return true if the guess is correct; otherwise, return false
 	 */
 	public boolean isWin(String guess) {
-		// NOT IMPLEMENTED YET
-		return false;
+		return this.code.equals(guess);
 	}
 
 	// PRIVATE METHODS
