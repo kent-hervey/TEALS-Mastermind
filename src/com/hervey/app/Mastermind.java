@@ -78,12 +78,14 @@ public class Mastermind {
 		System.out.println("in nearMatch, here is guess and code: " + builderCode + " " + builderGuess);
 		
 		int varyingLength = builderCode.length();
-		for (int i = 0; i<varyingLength; i++) {
-			if(builderCode.charAt(i)==builderGuess.charAt(i)) {
-				System.out.println("match at indes of and char of:  " + i + " " + builderCode.charAt(i));
-				builderCode.deleteCharAt(i);
-				builderGuess.deleteCharAt(i);
+		int counterExactMatch =0;
+		for (; counterExactMatch<varyingLength; counterExactMatch++) {
+			if(builderCode.charAt(counterExactMatch)==builderGuess.charAt(counterExactMatch)) {
+				System.out.println("match at indes of and char of:  " + counterExactMatch + " " + builderCode.charAt(counterExactMatch));
+				builderCode.deleteCharAt(counterExactMatch);
+				builderGuess.deleteCharAt(counterExactMatch);
 				System.out.println("words after deletion: " + builderCode + " " + builderGuess );
+				counterExactMatch--;
 				varyingLength = builderCode.length();
 			}
 		}
