@@ -66,7 +66,31 @@ public class Mastermind {
 	 * return the number of near matches
 	 */
 	private int nearMatches(String guess) {
-		// NOT IMPLEMENTED YET
+		//step 1:  make counter variable such as:  numNearMatches
+		int numNearMatches =0;
+		//step 2:  scan code and guess and remove all exact matches
+		//convert the two String to StringBuidler
+		
+		StringBuilder builderGuess = new StringBuilder(guess);
+		StringBuilder builderCode = new StringBuilder(this.code);
+		
+		//confirm expected result
+		System.out.println("in nearMatch, here is guess and code: " + builderCode + " " + builderGuess);
+		
+		int varyingLength = builderCode.length();
+		for (int i = 0; i<varyingLength; i++) {
+			if(builderCode.charAt(i)==builderGuess.charAt(i)) {
+				System.out.println("match at indes of and char of:  " + i + " " + builderCode.charAt(i));
+				builderCode.deleteCharAt(i);
+				builderGuess.deleteCharAt(i);
+				System.out.println("words after deletion: " + builderCode + " " + builderGuess );
+				varyingLength = builderCode.length();
+			}
+		}
+		
+		
+		//step 3:  loop through code, checking to see if any letters in guess are in 
+		// if find any, remove the letter from guess and the matching letter/position in code; also increment numNearMatches
 		return -99999;
 	}
 
