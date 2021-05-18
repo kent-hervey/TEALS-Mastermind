@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class AppMastermind {
-	public static final int numberOfAllowedGuesses = 2;  //should be 8 for production code
+	public static final int numberOfAllowedGuesses = 8;  //should be 8 for production code
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
@@ -18,6 +18,9 @@ public class AppMastermind {
 			if (codemaker.isWin(guess)) {
 				System.out.println("You WIN!");
 				System.exit(0); // Terminate if the user wins
+			}
+			else {
+				System.out.println("Sorry, you did not win; plese try again");
 			}
 		}
 		System.out.println("The correct code is " + codemaker.getCode());
