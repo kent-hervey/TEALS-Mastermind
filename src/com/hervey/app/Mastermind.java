@@ -75,25 +75,53 @@ public class Mastermind {
 		StringBuilder builderCode = new StringBuilder(this.code);
 		
 		//confirm expected result
-		System.out.println("in nearMatch, here is guess and code: " + builderCode + " " + builderGuess);
+		System.out.println("in nearMatch, here is guess and code: " + builderGuess + " " + builderCode);
 		
 		int varyingLength = builderCode.length();
 		int counterExactMatch =0;
 		for (; counterExactMatch<varyingLength; counterExactMatch++) {
 			if(builderCode.charAt(counterExactMatch)==builderGuess.charAt(counterExactMatch)) {
-				System.out.println("match at indes of and char of:  " + counterExactMatch + " " + builderCode.charAt(counterExactMatch));
+				//System.out.println("match at indes of and char of:  " + counterExactMatch + " " + builderCode.charAt(counterExactMatch));
 				builderCode.deleteCharAt(counterExactMatch);
 				builderGuess.deleteCharAt(counterExactMatch);
-				System.out.println("words after deletion: " + builderCode + " " + builderGuess );
 				counterExactMatch--;
 				varyingLength = builderCode.length();
 			}
 		}
-		
+		System.out.println("after exact match deletion, here is guess and code: " + builderGuess + " " + builderCode);
 		
 		//step 3:  loop through code, checking to see if any letters in guess are in 
+		
+
+		int counterNearMatch=0;
+		for (; counterNearMatch<varyingLength; counterNearMatch++) {
+			char charAtIndex = (builderGuess.charAt(counterNearMatch));
+			//System.out.println(charAtIndex);
+			String stringOfCharAtIndex = Character.toString(charAtIndex);
+			//System.out.println(stringOfCharAtIndex);
+			int indexOfMatchingChar = builderCode.indexOf(stringOfCharAtIndex);
+			if(indexOfMatchingChar!=-1) {
+				System.out.println("in nearMatch loop, this letter matched:  " + stringOfCharAtIndex);
+				System.out.println("index for code:  " + indexOfMatchingChar);
+				System.out.println("index for guess:  " + counterNearMatch);
+//				builderCode.deleteCharAt(counterNearMatch);
+//				builderGuess.deleteCharAt(indexOfMatchingChar);
+				
+				builderCode.deleteCharAt(indexOfMatchingChar);
+				builderGuess.deleteCharAt(counterNearMatch);
+				
+				
+				counterNearMatch--;
+				numNearMatches++;
+				varyingLength = builderCode.length();
+				System.out.println("after near match deletions in loop, guess and code: " + builderGuess + " " + builderCode);
+			}
+		}
+		System.out.println("words after near match method, guess and code: " + builderGuess + " " + builderCode );
+		
+		
 		// if find any, remove the letter from guess and the matching letter/position in code; also increment numNearMatches
-		return -99999;
+		return numNearMatches;
 	}
 
 }
