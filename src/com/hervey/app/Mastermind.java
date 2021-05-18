@@ -36,7 +36,8 @@ public class Mastermind {
 	 * print the number of exact and near matches
 	 */
 	public void reportMatches(String guess) {
-		// NOT IMPLEMENTED YET
+		System.out.println("Number of exact matches:  " + exactMatches(guess));
+		System.out.println("Number of near matches:  " + nearMatches(guess));
 	}
 
 	/**
@@ -51,8 +52,14 @@ public class Mastermind {
 	 * return the number of exact matches
 	 */
 	private int exactMatches(String guess) {
-		// NOT IMPLEMENTED YET
-		return 0;
+		int result =0;
+		for(int i = 0; i < this.code.length(); i++) {
+			if (this.code.charAt(i)==guess.charAt(i)) {
+				result++;
+			}
+		}
+		
+		return result;
 	}
 
 	/**
@@ -60,7 +67,7 @@ public class Mastermind {
 	 */
 	private int nearMatches(String guess) {
 		// NOT IMPLEMENTED YET
-		return 0;
+		return -99999;
 	}
 
 }
