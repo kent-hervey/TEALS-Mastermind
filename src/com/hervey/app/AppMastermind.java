@@ -19,10 +19,8 @@ public class AppMastermind {
 				System.out.println("You WIN!");
 				System.exit(0); // Terminate if the user wins
 			}
-			else {
-				System.out.println("Sorry, you did not win; plese try again");
-			}
 		}
+		System.out.println("Sorry, you did not win; plese try again");
 		System.out.println("The correct code is " + codemaker.getCode());
 	}
 

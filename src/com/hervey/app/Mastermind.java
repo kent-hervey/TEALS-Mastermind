@@ -28,7 +28,7 @@ public class Mastermind {
 	 * return the code
 	 */
 	public String getCode() {
-		System.out.println("code is:  " + this.code);
+		//System.out.println("code is:  " + this.code);
 		return this.code;
 	}
 
