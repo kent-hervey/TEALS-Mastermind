@@ -1,19 +1,21 @@
+package otherPackage;
+
 import java.io.*;
 
 /**
 * This class implements the Mastermind game. It will generate a random
 * code and the user has up to 8 chances to guess the correct code.
 */
-public class Mastermind {
+public class MastermindJohn {
 	// DATA MEMBERS //
 	private String code; // the code
 
 	// CONSTRUCTOR //
 	/**
 	* randomly generate the code (a string with 4 letters
-	* chosen from ’a’ to ’f’)
+	* chosen from ï¿½aï¿½ to ï¿½fï¿½)
 	*/
-	public Mastermind() {
+	public MastermindJohn() {
 		code = new String();
 		
 		for (int i = 0; i < 4; i++) {
@@ -121,7 +123,7 @@ public class Mastermind {
 		int numberOfAllowedGuesses = 8;
 		
 		BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
-		Mastermind codemaker = new Mastermind();
+		MastermindJohn codemaker = new MastermindJohn();
 		codemaker.displayWelcome(numberOfAllowedGuesses);
 		
 		for (int i = 1; i <= numberOfAllowedGuesses; i++) {
