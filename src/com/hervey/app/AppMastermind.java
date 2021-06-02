@@ -14,10 +14,17 @@ public class AppMastermind {
 		for (int i = 1; i <= numberOfAllowedGuesses; i++) {
 			System.out.print("---\n>>Guess: " + i + ": ");
 			String guess = stdin.readLine();
-			while(guess.length()!=4) {
+//			while(guess.length()!=4) {
+//				System.out.println("please enter exactly four letters");
+//				guess = stdin.readLine();
+//			}
+			for(; ; ) {
+				if(guess.length()==4) {break;}
 				System.out.println("please enter exactly four letters");
 				guess = stdin.readLine();
 			}
+			
+			
 			codemaker.reportMatches(guess);
 			if (codemaker.isWin(guess)) {
 				System.out.println("You WIN!");
